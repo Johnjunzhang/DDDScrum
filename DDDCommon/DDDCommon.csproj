@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B8CD7625-82D3-4F88-BD00-C195D7FD5DB2}</ProjectGuid>
+    <ProjectGuid>{16FE3EDB-BB31-4A7D-8A77-EA62F588C94C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DDDScrum</RootNamespace>
-    <AssemblyName>DDDScrum</AssemblyName>
+    <RootNamespace>DDDCommon</RootNamespace>
+    <AssemblyName>DDDCommon</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,8 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="DomainEventPublisher.cs" />
+    <Compile Include="DomainEventSubscriber.cs" />
+    <Compile Include="IDomainEventSubscriber.cs" />
+    <Compile Include="IDomainEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
