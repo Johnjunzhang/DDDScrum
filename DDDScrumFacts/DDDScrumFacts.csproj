@@ -50,6 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SprintFact.cs" />
     <Compile Include="ProductFact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,6 +58,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DDDCommon\DDDCommon.csproj">
+      <Project>{16FE3EDB-BB31-4A7D-8A77-EA62F588C94C}</Project>
+      <Name>DDDCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DDDScrum\DDDScrum.csproj">
       <Project>{B8CD7625-82D3-4F88-BD00-C195D7FD5DB2}</Project>
       <Name>DDDScrum</Name>

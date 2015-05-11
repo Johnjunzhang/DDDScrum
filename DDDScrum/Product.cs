@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DDDScrum
 {
-    public class Product
+    public class Product : Entity
     {
+        private readonly List<BackLogItem> backLogItems = new List<BackLogItem>();
+        private readonly List<Sprint> sprints = new List<Sprint>();
         public string Name { get; private set; }
 
         public Product(string name)
@@ -14,6 +17,20 @@ namespace DDDScrum
         public void Rename(String newName)
         {
             Name = newName;
+        }
+
+        public BackLogItem Plan(string storyName)
+        {
+            var backLogItem = new BackLogItem(storyName);
+            backLogItems.Add(backLogItem);
+            return backLogItem;
+        }
+
+        public Sprint Schedule(string sprintName, DateTime startTime, DateTime endTime)
+        {
+            var sprint = new Sprint(sprintName, startTime, endTime);
+            sprints.Add(sprint);
+            return sprint;
         }
     }
 }
