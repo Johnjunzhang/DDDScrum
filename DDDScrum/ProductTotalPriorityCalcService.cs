@@ -12,9 +12,9 @@ namespace DDDScrum
             this.backLogItemRepository = backLogItemRepository;
         }
 
-        public double Cacl(Guid productId)
+        public double Cacl(Product product)
         {
-            var backLogItems = backLogItemRepository.FindByProductId(productId);
+            var backLogItems = backLogItemRepository.FindByProductId(product.Id);
             return backLogItems.Sum(item => item.BusinessPriority.Priority);
         }
     }

@@ -43,7 +43,7 @@
     <Compile Include="BackLogItemStatus.cs" />
     <Compile Include="BusinessPriority.cs" />
     <Compile Include="BackLogItemRepository.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="ProductTotalPriorityCalcService.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="IBackLogItemRepository.cs" />
     <Compile Include="Product.cs" />

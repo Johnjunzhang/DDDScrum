@@ -26,7 +26,7 @@ namespace DDDScrumFacts
             backLogItemRepository.Save(backLogItem2);
 
             var productTotalPriorityCalcService = new ProductTotalPriorityCalcService(backLogItemRepository);
-            Assert.Equal(2.5, productTotalPriorityCalcService.Cacl(product.Id));
+            Assert.Equal(2.5, productTotalPriorityCalcService.Cacl(product));
         } 
     }
 }
