@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainEventPublisher.cs" />
-    <Compile Include="DomainEventSubscriber.cs" />
     <Compile Include="IDomainEventSubscriber.cs" />
     <Compile Include="IDomainEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
