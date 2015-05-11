@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDScrumFacts", "DDDScrumFa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDCommon", "DDDCommon\DDDCommon.csproj", "{16FE3EDB-BB31-4A7D-8A77-EA62F588C94C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDNotification", "DDDNotification\DDDNotification.csproj", "{5540D464-1489-477C-A909-16CF131EC858}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{16FE3EDB-BB31-4A7D-8A77-EA62F588C94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16FE3EDB-BB31-4A7D-8A77-EA62F588C94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16FE3EDB-BB31-4A7D-8A77-EA62F588C94C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5540D464-1489-477C-A909-16CF131EC858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5540D464-1489-477C-A909-16CF131EC858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5540D464-1489-477C-A909-16CF131EC858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5540D464-1489-477C-A909-16CF131EC858}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
