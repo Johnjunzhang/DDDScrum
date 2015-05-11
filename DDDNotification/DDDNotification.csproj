@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{07900D98-C22D-4A4D-8C67-7E81F321BE42}</ProjectGuid>
+    <ProjectGuid>{5540D464-1489-477C-A909-16CF131EC858}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DDDNotification</RootNamespace>
