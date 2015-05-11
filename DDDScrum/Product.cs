@@ -21,14 +21,14 @@ namespace DDDScrum
 
         public BackLogItem Plan(string storyName)
         {
-            var backLogItem = new BackLogItem(storyName);
+            var backLogItem = new BackLogItem(storyName, this);
             backLogItems.Add(backLogItem);
             return backLogItem;
         }
 
         public Sprint Schedule(string sprintName, DateTime startTime, DateTime endTime)
         {
-            var sprint = new Sprint(sprintName, startTime, endTime);
+            var sprint = new Sprint(sprintName, startTime, endTime, this);
             sprints.Add(sprint);
             return sprint;
         }
