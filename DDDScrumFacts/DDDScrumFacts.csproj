@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BacklogItemFact.cs" />
+    <Compile Include="CaclTotalBusinessPriorityFact.cs" />
     <Compile Include="ProductFact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -42,7 +42,10 @@
     <Compile Include="BackLogItem.cs" />
     <Compile Include="BackLogItemStatus.cs" />
     <Compile Include="BusinessPriority.cs" />
+    <Compile Include="BackLogItemRepository.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="IBackLogItemRepository.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sprint.cs" />
