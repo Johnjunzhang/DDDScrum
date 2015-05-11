@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DDDCommon;
 
 namespace DDDScrum
 {
@@ -29,6 +30,8 @@ namespace DDDScrum
         {
             SprintId = sprint.Id;
             BackLogItemStatus = BackLogItemStatus.Commited;
+
+            DomainEventPublisher.Instance.Publish(new BackLogCommitedEvent(Name, sprint.Name, DateTime.UtcNow));
         }
 
         public Task DefineTask(string taskName, int remainingHour)
