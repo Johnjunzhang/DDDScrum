@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DDDCommon
 {
@@ -13,79 +14,31 @@ namespace DDDCommon
             get { return _instance ?? (_instance = new DomainEventPublisher()); }
         }
 
-        DomainEventPublisher()
-        {
-            publishing = false;
-        }
-
-        bool publishing;
-
         List<IDomainEventSubscriber<IDomainEvent>> subscribers;
         List<IDomainEventSubscriber<IDomainEvent>> Subscribers
         {
             get { return subscribers ?? (subscribers = new List<IDomainEventSubscriber<IDomainEvent>>()); }
-            set
-            {
-                subscribers = value;
-            }
         }
 
         public void Publish<T>(T domainEvent) where T : IDomainEvent
         {
-            if (publishing || !HasSubscribers()) return;
-            try
-            {
-                publishing = true;
-
-                var eventType = domainEvent.GetType();
-
-                foreach (var subscriber in Subscribers)
-                {
-                    var subscribedToType = subscriber.SubscribedToEventType();
-                    if (eventType == subscribedToType || subscribedToType == typeof(IDomainEvent))
-                    {
-                        subscriber.HandleEvent(domainEvent);
-                    }
-                }
-            }
-            finally
-            {
-                publishing = false;
-            }
+            var matchedSubscribers = Subscribers.Where(sub => IsEventTypeMatch(domainEvent, sub)).ToList();
+            matchedSubscribers.ForEach(sub => sub.HandleEvent(domainEvent));
         }
 
-        public void PublishAll(ICollection<IDomainEvent> domainEvents)
+        private static bool IsEventTypeMatch<T>(T domainEvent, IDomainEventSubscriber<IDomainEvent> subscriber) where T : IDomainEvent
         {
-            foreach (var domainEvent in domainEvents)
-            {
-                Publish(domainEvent);
-            }
+            return domainEvent.GetType() == subscriber.SubscribedToEventType();
         }
 
         public void Reset()
         {
-            if (!publishing)
-            {
-                Subscribers = null;
-            }
+            subscribers = null;
         }
 
         public void Subscribe(IDomainEventSubscriber<IDomainEvent> subscriber)
         {
-            if (!publishing)
-            {
-                Subscribers.Add(subscriber);
-            }
-        }
-
-        public void Subscribe(Action<IDomainEvent> handle)
-        {
-            Subscribe(new DomainEventSubscriber<IDomainEvent>(handle));
-        }
-
-        bool HasSubscribers()
-        {
-            return subscribers != null && Subscribers.Count != 0;
+            Subscribers.Add(subscriber);
         }
     }
 }
