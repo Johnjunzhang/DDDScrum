@@ -16,14 +16,14 @@ namespace DDDScrum
             get { return backLogItems; }
         }
 
-        public Product Product { get; private set; }
+        public Guid ProductId { get; private set; }
 
         public Sprint(string name, DateTime startTime, DateTime endTime, Product product)
         {
             Name = name;
             StartTime = startTime;
             EndTime = endTime;
-            Product = product;
+            ProductId = product.Id;
         }
     }
 }

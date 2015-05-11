@@ -22,7 +22,8 @@ namespace DDDScrumFacts
             var backLogItem = product.Plan("this is a story");
 
             Assert.Equal("this is a story", backLogItem.Name);
-            Assert.Equal(product.Id, backLogItem.Product.Id);
+            Assert.Equal(product.Id, backLogItem.ProductId);
+            Assert.Equal(BackLogItemStatus.Planned, backLogItem.BackLogItemStatus);
         }
 
         [Fact]
@@ -34,7 +35,7 @@ namespace DDDScrumFacts
             Assert.Equal("Sprint1", sprint.Name);
             Assert.Equal(new DateTime(2015, 1, 1), sprint.StartTime);
             Assert.Equal(new DateTime(2015, 1, 15), sprint.EndTime);
-            Assert.Equal(product.Id, sprint.Product.Id);
+            Assert.Equal(product.Id, sprint.ProductId);
         }
     }
 }
