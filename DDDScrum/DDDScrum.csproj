@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackLogItem.cs" />
+    <Compile Include="BusinessPriority.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

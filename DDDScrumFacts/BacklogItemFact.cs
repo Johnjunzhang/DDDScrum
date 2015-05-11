@@ -17,5 +17,17 @@ namespace DDDScrumFacts
             backLogItem.CommitTo(sprint);
             Assert.Equal(backLogItem.Sprint.Id, sprint.Id);
         }
+
+        [Fact]
+        public void should_calc_back_log_item_priority()
+        {
+            var product = new Product("ScrumDDD");
+            var backLogItem = product.Plan("this is a story");
+            var businessPriority = new BusinessPriority(3, 2, 2);
+
+            backLogItem.Assign(businessPriority);
+
+            Assert.Equal(2.17, backLogItem.BusinessPriority.Priority);
+        }
     }
 }
