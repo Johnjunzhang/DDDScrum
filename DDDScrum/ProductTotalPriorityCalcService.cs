@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace DDDScrum
 {
@@ -12,10 +11,16 @@ namespace DDDScrum
             this.backLogItemRepository = backLogItemRepository;
         }
 
-        public double Cacl(Product product)
+        public double Calc(Product product)
         {
             var backLogItems = backLogItemRepository.FindByProductId(product.Id);
-            return backLogItems.Sum(item => item.BusinessPriority.Priority);
+            var committedBackLogs = backLogItems.Where(IsCommited);
+            return committedBackLogs.Sum(item => item.BusinessPriority.Priority);
+        }
+
+        private static bool IsCommited(BackLogItem item)
+        {
+            return item.BackLogItemStatus == BackLogItemStatus.Commited;
         }
     }
 }
