@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace DDDScrum
 {
-    public interface IBackLogItemRepository
+    public interface IRepository<T> where T : IAggregateRoot
     {
-        List<BackLogItem> FindByProductId(Guid productId);
-        void Save(BackLogItem backLogItem);
+        IEnumerable<T> FindByProductId(Guid productId);
+        void Save(T backLogItem);
     }
 }

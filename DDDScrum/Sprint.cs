@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DDDScrum
 {
-    public class Sprint : Entity
+    public class Sprint : Entity, IAggregateRoot
     {
         private readonly List<BackLogItem> backLogItems = new List<BackLogItem>();
 

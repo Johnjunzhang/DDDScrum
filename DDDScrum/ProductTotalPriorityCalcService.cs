@@ -1,12 +1,13 @@
 ﻿using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace DDDScrum
 {
     public class ProductTotalPriorityCalcService
     {
-        private readonly IBackLogItemRepository backLogItemRepository;
+        private readonly IRepository<BackLogItem> backLogItemRepository;
 
-        public ProductTotalPriorityCalcService(IBackLogItemRepository backLogItemRepository)
+        public ProductTotalPriorityCalcService(IRepository<BackLogItem> backLogItemRepository)
         {
             this.backLogItemRepository = backLogItemRepository;
         }

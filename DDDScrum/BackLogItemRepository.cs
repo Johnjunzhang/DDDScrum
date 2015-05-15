@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace DDDScrum
 {
-    public class BackLogItemRepository : IBackLogItemRepository
+    public class BackLogItemRepository : IRepository<BackLogItem>
     {
         private readonly List<BackLogItem> backLogItems = new List<BackLogItem>();
 
-        public List<BackLogItem> FindByProductId(Guid productId)
+        public IEnumerable<BackLogItem> FindByProductId(Guid productId)
         {
             return backLogItems.Where(item => item.ProductId == productId).ToList();
         }
