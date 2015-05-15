@@ -5,7 +5,7 @@ using DDDCommon;
 
 namespace DDDScrum
 {
-    public class BackLogItem : Entity
+    public class BackLogItem : Entity, IAggregateRoot
     {
         private readonly List<Task> tasks = new List<Task>();
         public Guid ProductId { get; private set; }

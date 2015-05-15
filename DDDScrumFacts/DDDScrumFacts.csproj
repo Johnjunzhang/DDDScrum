@@ -51,8 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BacklogItemFact.cs" />
-    <Compile Include="CaclTotalBusinessPriorityFact.cs" />
-    <Compile Include="MessageSenderFact.cs" />
     <Compile Include="ProductFact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,10 +61,6 @@
     <ProjectReference Include="..\DDDCommon\DDDCommon.csproj">
       <Project>{16FE3EDB-BB31-4A7D-8A77-EA62F588C94C}</Project>
       <Name>DDDCommon</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DDDNotification\DDDNotification.csproj">
-      <Project>{07900D98-C22D-4A4D-8C67-7E81F321BE42}</Project>
-      <Name>DDDNotification</Name>
     </ProjectReference>
     <ProjectReference Include="..\DDDScrum\DDDScrum.csproj">
       <Project>{B8CD7625-82D3-4F88-BD00-C195D7FD5DB2}</Project>

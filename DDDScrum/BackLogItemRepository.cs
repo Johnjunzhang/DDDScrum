@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace DDDScrum
 {
-    public class BackLogItemRepository : IBackLogItemRepository
+    public class BackLogItemRepository : IRepository<BackLogItem>
     {
         private readonly List<BackLogItem> backLogItems = new List<BackLogItem>();
 

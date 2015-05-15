@@ -2,7 +2,7 @@
 
 namespace DDDScrum
 {
-    public class Task : Entity
+    public class Task : Entity, IAggregateRoot
     {
         public string TaskName { get; private set; }
         public int RemainingHour { get; private set; }
